@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>2023-05-22作业</title>
+        <meta charset="utf-8">
+        <style>
+            .grid {
+              display: grid;
+              grid-template-columns: repeat(2, 200px);
+              grid-template-rows: repeat(2, 200px);
+              gap: 10px;
+              align-items: center;
+              justify-items: center;
+            }
+        
+            .merged-cell {
+              grid-row: span 2;
+        
+            }
+          </style>
+    </head>
+
+
+    <body>
+       
+          
+        
+        <div id="icc">
+            
+            <div class="grid">
+                <div>
+                  <input type="range" id="volume" min="1" max="5" oninput="updatedValue()">
+                </div>
+                <div id="mergedCell" class="merged-cell">
+                  <input type="range" id="cowbell" min="2" max="10" step="1" oninput="updatedValue()">
+                </div>
+                <div id="numberValue"></div>
+              </div>
+
+          </div> 
+
+
+    </body>
+
+    <script>
+        function updatedValue() {
+      let volume = document.getElementById('volume').value;
+      let cowbell = document.getElementById('cowbell').value;
+      let number = parseInt(volume) * parseInt(cowbell);
+      document.getElementById('numberValue').textContent = 'Number: ' + number;
+    }
+        </script>
+
+
+</html>
